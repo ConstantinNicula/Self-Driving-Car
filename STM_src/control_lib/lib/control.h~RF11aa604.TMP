@@ -1,0 +1,21 @@
+#ifndef _CONTROL_H__
+#define _CONTROL_H__
+#include "stm32f10x.h"
+#define NUMBER_OF_SENSORS 4
+#define max_heading_delta  27.1213034042
+#define max_forward_velocity 9555.55556 
+
+/* 
+	Position of the sensors relative to the frame of reference centred on the front axle.
+*/
+extern float sensor_poz[NUMBER_OF_SENSORS][2];
+extern float sensor_dir[NUMBER_OF_SENSORS][2];
+
+
+/*
+	Compute heading angle.
+*/
+float computeHeading(uint32_t sensorMeasurements[NUMBER_OF_SENSORS], float forward_velocity,float* lateral_error, float* heading_error);
+uint16_t getPWM_from_angle(float angle);
+
+#endif

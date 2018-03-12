@@ -1,0 +1,11 @@
+#ifndef _ENCODER_H_
+#define _ENCODER_H_
+#include "stm32f10x.h"
+void initEncoder(void);
+void startReadTimer(void);
+// return motor signed motor rpm
+float getRPM(void);
+
+
+#endif
+
